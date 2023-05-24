@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f253a;;
+    height: 80px;
+}
+
+.logoImage:hover{
+    transform: translateY(-4px);
+    transition: transform 0.7s;
+    cursor: pointer
+}
