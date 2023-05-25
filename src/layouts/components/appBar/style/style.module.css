@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f253a;;
+    height: 80px;
+}
+
+.divider{
+    width: 95vw !important;
+    display: flex;
+    
+}
+
+.dividerContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.logoImage:hover{
+    transform: translateY(-4px);
+    transition: transform 0.7s;
+    cursor: pointer
+}
