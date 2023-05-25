@@ -1,8 +1,23 @@
-import React from "react";
-import { Card, CardBody, Grid, GridItem } from "@chakra-ui/react";
+import React, { useContext, useEffect } from "react";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
+import DefaultCard from "@/layouts/components/card/DefaultCard";
 import style from "src/styles/pages/chess/style.module.css";
+import { getPieces } from "./api/chessApi";
+import { ChessContext } from "@/context/ChessContext";
+import LoadingProvider from "@/layouts/components/loadingProvider/LoadingProvider";
+import { firstStep, secondStep, thirdStep } from "@/constants/pages/chess/constants";
 
 const Home = () => {
+  const {
+    states: { chessPieces, setChessPieces, loadingChess, setLoadingChess },
+  } = useContext(ChessContext);
+
+  useEffect(() => {
+    if (!chessPieces.length) {
+      getPieces(setChessPieces, setLoadingChess);
+    }
+  }, []);
+
   return (
     <>
       <div className={style.container}>
@@ -14,19 +29,15 @@ const Home = () => {
             className={style.grid}
           >
             <GridItem colSpan={2} rowSpan={2}>
-              <Card className={style.card}>
-                <CardBody></CardBody>
-              </Card>
+              <DefaultCard title={firstStep}>
+                <LoadingProvider isLoading={loadingChess}></LoadingProvider>
+              </DefaultCard>
             </GridItem>
             <GridItem colSpan={2}>
-              <Card className={style.card}>
-                <CardBody></CardBody>
-              </Card>
+              <DefaultCard title={secondStep}></DefaultCard>
             </GridItem>
             <GridItem colSpan={2}>
-              <Card className={style.card}>
-                <CardBody></CardBody>
-              </Card>
+              <DefaultCard title={thirdStep}></DefaultCard>
             </GridItem>
           </Grid>
         </div>

@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
 
-module.exports = nextConfig;
+
+module.exports = {
+  env: {
+    DEFAULT_API_ROUTE: process.env.DEFAULT_API_ROUTE,
+  },
+};
