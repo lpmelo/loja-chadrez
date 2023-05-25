@@ -13,7 +13,9 @@ const AppBar = () => {
           className={style.logoImage}
         />
       </div>
-      <Divider orientation="horizontal" />
+      <div className={style.dividerContainer}>
+        <Divider orientation="horizontal" className={style.divider} />
+      </div>
     </>
   );
 };

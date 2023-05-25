@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 88vh;
+}
+
+.grid{
+    height: 80%;
+}
+
+.cardContainer {
+  margin-top: 25px;
+  width: 95vw;
+}
+
+.card {
+  height: 100%;
+  background-color: #21394f !important;
+}
