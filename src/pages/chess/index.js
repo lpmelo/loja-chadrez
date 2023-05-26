@@ -6,6 +6,7 @@ import { getPieces } from "./api/chessApi";
 import { ChessContext } from "@/context/ChessContext";
 import LoadingProvider from "@/layouts/components/loadingProvider/LoadingProvider";
 import { firstStep, secondStep, thirdStep } from "@/constants/pages/chess/constants";
+import ChessCards from "@/layouts/components/chessCards/ChessCards";
 
 const Home = () => {
   const {
@@ -30,7 +31,9 @@ const Home = () => {
           >
             <GridItem colSpan={2} rowSpan={2}>
               <DefaultCard title={firstStep}>
-                <LoadingProvider isLoading={loadingChess}></LoadingProvider>
+                <LoadingProvider isLoading={loadingChess}>
+                  <ChessCards data={chessPieces}/>
+                </LoadingProvider>
               </DefaultCard>
             </GridItem>
             <GridItem colSpan={2}>

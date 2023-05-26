@@ -1,16 +1,13 @@
 import React from "react";
 import { Card, CardBody, Text } from "@chakra-ui/react";
 import style from "./styles/style.module.css";
+import DefaultText from "../text/DefaultText";
 
-const DefaultCard = ({ children, title }) => {
+const DefaultCard = ({ children, title, className }) => {
   return (
-    <Card className={style.card}>
+    <Card className={className ? className : style.card}>
       <CardBody>
-        {title && (
-          <Text color="white" fontFamily="sans-serif" fontSize={"14px"}>
-            {title}
-          </Text>
-        )}
+        {title && <DefaultText>{title}</DefaultText>}
         {children}
       </CardBody>
     </Card>
