@@ -4,7 +4,7 @@ import DefaultCard from "../card/DefaultCard";
 import DefaultText from "../text/DefaultText";
 import style from "./styles/style.module.css";
 
-const ChessCards = ({ data }) => {
+const ChessCards = ({ data, onSelect }) => {
   return (
     <>
       {data?.length ? (
@@ -16,7 +16,10 @@ const ChessCards = ({ data }) => {
         >
           {data.map((item, index) => {
             return (
-              <GridItem key={`chess-card-${index}`}>
+              <GridItem
+                key={`chess-card-${index}`}
+                onClick={onSelect ? () => {onSelect(item)} : ""}
+              >
                 <DefaultCard className={style.card}>
                   <Container className={style.container}>
                     <div className={style.description}>
@@ -29,7 +32,7 @@ const ChessCards = ({ data }) => {
                       <Image src={item.image} alt={item.name} height="60%" />
                     </div>
                     <div className={style.value}>
-                      <DefaultText fontWeight={"bolder"} fontSize={'20px'}>
+                      <DefaultText fontWeight={"bolder"} fontSize={"20px"}>
                         {item.value}
                       </DefaultText>
                     </div>
