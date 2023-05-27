@@ -4,7 +4,18 @@ import DefaultCard from "../card/DefaultCard";
 import DefaultText from "../text/DefaultText";
 import style from "./styles/style.module.css";
 
-const ChessCards = ({ data, onSelect }) => {
+const ChessCards = ({ data, onSelect, selectedData }) => {
+  const verifyIsSelected = (pieceId) => {
+    if (selectedData) {
+      if (selectedData.length) {
+        if (selectedData.find((item) => item.id === pieceId)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
   return (
     <>
       {data?.length ? (
@@ -18,9 +29,21 @@ const ChessCards = ({ data, onSelect }) => {
             return (
               <GridItem
                 key={`chess-card-${index}`}
-                onClick={onSelect ? () => {onSelect(item)} : ""}
+                onClick={
+                  onSelect
+                    ? () => {
+                        onSelect(item, item.id);
+                      }
+                    : ""
+                }
+                colSpan={[3, 3, 1 ,1]}
               >
-                <DefaultCard className={style.card}>
+                <DefaultCard
+                  className={
+                    verifyIsSelected(item.id) ? style.selectedCard : style.card
+                  }
+                  
+                >
                   <Container className={style.container}>
                     <div className={style.description}>
                       <DefaultText fontWeight={"bolder"}>

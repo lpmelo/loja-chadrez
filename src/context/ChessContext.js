@@ -16,7 +16,7 @@ const ChessContext = createContext({
   handlers: {
     handleAddPiece: "",
     handleClickRemove: "",
-    handleClickClear: ""
+    handleClickClear: "",
   },
 });
 
@@ -27,24 +27,29 @@ const ChessContextProvider = ({ children }) => {
   const [piecesAmount, setPiecesAmount] = useState(0);
   const [piecesTotalPrice, setPiecesTotalPrice] = useState(0);
 
-  const handleAddPiece = (piece) => {
-    setSelectedPieces([
-      { ...piece, pieceId: selectedPieces.length + 1 },
-      ...selectedPieces,
-    ]);
+  const handleAddPiece = (piece, pieceId) => {
+    if (selectedPieces.length) {
+      if (selectedPieces.find((item) => item.id === pieceId)) {
+        const index = selectedPieces.findIndex((item) => item.id === pieceId);
+        let newSelectedPieces = [...selectedPieces];
+        newSelectedPieces.splice(index, 1);
+        return setSelectedPieces(newSelectedPieces);
+      }
+    }
+    return setSelectedPieces([{ ...piece }, ...selectedPieces]);
   };
 
   const handleClickRemove = (pieceId) => {
-    const pieceArray = selectedPieces.filter((item) => item.pieceId != pieceId);
+    const pieceArray = selectedPieces.filter((item) => item.id != pieceId);
 
     setSelectedPieces(pieceArray);
   };
 
-  const handleClickClear = () =>{
+  const handleClickClear = () => {
     setSelectedPieces([]);
     setPiecesAmount(0);
     setPiecesTotalPrice(0);
-  }
+  };
 
   const incrementTotal = () => {
     if (selectedPieces.length) {

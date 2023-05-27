@@ -7,9 +7,12 @@ import { getPieces } from "./api/chessApi";
 import { ChessContext } from "@/context/ChessContext";
 import LoadingProvider from "@/layouts/components/loadingProvider/LoadingProvider";
 import {
+  amount,
+  clearAll,
   firstStep,
   secondStep,
   thirdStep,
+  total,
 } from "@/constants/pages/chess/constants";
 import ChessCards from "@/layouts/components/chessCards/ChessCards";
 import ChessRows from "@/layouts/components/chessRows/ChessRows";
@@ -45,29 +48,32 @@ const Home = () => {
             gap={4}
             className={style.grid}
           >
-            <GridItem colSpan={[4, 4, 4, 4, 4, 2]} rowSpan={2}>
+            <GridItem colSpan={[4, 4, 4, 4, 4, 2]} rowSpan={2} minH={"350px"}>
               <DefaultCard title={firstStep} scrollable>
                 <LoadingProvider isLoading={loadingChess}>
                   <ChessCards
                     data={chessPieces}
-                    onSelect={(piece) => handleAddPiece(piece)}
+                    selectedData={selectedPieces}
+                    onSelect={(piece, pieceId) =>
+                      handleAddPiece(piece, pieceId)
+                    }
                   />
                 </LoadingProvider>
               </DefaultCard>
             </GridItem>
-            <GridItem colSpan={[4, 4, 4, 4, 2]}>
-              <DefaultCard title={secondStep} scrollable maxHeight={"350px"}>
+            <GridItem colSpan={[4, 4, 4, 4, 2]} minH="350px">
+              <DefaultCard title={secondStep} scrollable>
                 <ChessRows
                   data={selectedPieces}
                   onClickRemove={(pieceId) => handleClickRemove(pieceId)}
                 />
               </DefaultCard>
             </GridItem>
-            <GridItem colSpan={[4, 4, 4, 4, 2]}>
-              <DefaultCard title={thirdStep} maxHeight="170px">
+            <GridItem colSpan={[4, 4, 4, 4, 2]} maxH="170px">
+              <DefaultCard title={thirdStep}>
                 <div className={style.thirdStepContainer}>
                   <div className={style.pieceAmountContainer}>
-                    <DefaultText>Quantidade de peças selecionadas:</DefaultText>
+                    <DefaultText>{amount}</DefaultText>
                     <DefaultCard
                       className={style.amountCard}
                       flexBody
@@ -79,7 +85,7 @@ const Home = () => {
                     </DefaultCard>
                   </div>
                   <div className={style.totalContainer}>
-                    <DefaultText>Total:</DefaultText>
+                    <DefaultText>{total}</DefaultText>
                     <DefaultCard className={style.totalCard}>
                       <DefaultText fontWeight="bolder">
                         {piecesTotalPrice ? piecesTotalPrice : "--"}
@@ -93,7 +99,7 @@ const Home = () => {
                     leftIcon={<ChakraIcon.DeleteIcon />}
                     className={style.clearButton}
                   >
-                    Limpar Tudo
+                    {clearAll}
                   </Button>
                 </div>
               </DefaultCard>

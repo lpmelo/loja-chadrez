@@ -16,26 +16,42 @@
   cursor: pointer;
 }
 
-.card:active{
+.card:active {
   transform: scale(0.8);
 }
 
-.description{
+.selectedCard {
+  height: 100%;
+  background-color: #45556c !important;
+  border: 2px solid rgba(18, 141, 235) !important;
+}
+
+.selectedCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px 0.1px rgba(226, 4, 4, 0.4);
+  border: 2px solid rgba(226, 4, 4, 0.4) !important;
+  transition: transform 0.7s;
+  cursor: pointer;
+}
+
+.selectedCard:active {
+  transform: scale(0.8);
+}
+
+.description {
   max-height: 20%;
 }
 
-.value{
+.value {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10%;
 }
 
-.image{
+.image {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70%;
 }
-
-
