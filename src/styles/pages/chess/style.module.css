@@ -4,11 +4,60 @@
   height: 88vh;
 }
 
-.grid{
-    height: 80%;
+.grid {
+  height: 80%;
 }
 
 .cardContainer {
   margin-top: 25px;
   width: 95vw;
+}
+
+.thirdStepContainer {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  padding-top: 10px;
+}
+
+.pieceAmountContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+  max-height: 30%;
+}
+
+.amountCard {
+  margin-left: 10px !important;
+  background-color: #0f253a !important;
+  height: 30px;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+}
+
+.totalCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px !important;
+  background-color: #0f253a !important;
+  height: 45px;
+  width: 35%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.clearButton{
+  background-color: #037cd4 !important;
+  color: white
 }
