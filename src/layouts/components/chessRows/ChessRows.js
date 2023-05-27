@@ -37,7 +37,7 @@ const ChessRows = ({ data, onClickRemove }) => {
                     backgroundColor={"#5a5867"}
                     color={"white"}
                     icon={<ChakraIcons.DeleteIcon />}
-                    onClick={() => onClickRemove(item.pieceId)}
+                    onClick={() => onClickRemove(item.id)}
                   />
                 </div>
               </DefaultCard>
