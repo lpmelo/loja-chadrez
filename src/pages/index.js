@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import DefaultSpinner from "@/layouts/components/spinner/Spinner";
+import DefaultSpinner from "@/layouts/components/spinner/DefaultSpinner";
 import style from "src/styles/global.module.css";
 
 const Home = () => {
