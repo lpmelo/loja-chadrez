@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const app = axios.create({
-  baseURL: process.env.DEFAULT_API_ROUTE,
+  baseURL: "/api/",
 });
 
 export default app;
