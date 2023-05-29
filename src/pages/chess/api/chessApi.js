@@ -3,7 +3,7 @@ import axios from "src/configs/axiosConfig";
 export const getPieces = async (setData, setLoading) => {
   setLoading(true);
   await axios
-    .get(`/api/pieces`)
+    .get(`pieces`)
     .then((res) => {
       if (res) {
         if (res.data) {
