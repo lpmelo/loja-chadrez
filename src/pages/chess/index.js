@@ -3,7 +3,7 @@ import { Grid, GridItem, Button } from "@chakra-ui/react";
 import * as ChakraIcon from "@chakra-ui/icons";
 import DefaultCard from "@/layouts/components/card/DefaultCard";
 import style from "src/styles/pages/chess/style.module.css";
-import { getPieces } from "./api/chessApi";
+import { getPieces } from "src/api/chess/chessApi";
 import { ChessContext } from "@/context/ChessContext";
 import LoadingProvider from "@/layouts/components/loadingProvider/LoadingProvider";
 import {
