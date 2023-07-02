@@ -1,5 +1,5 @@
-# Desafio Envolve - Teste Front-End
-Desenvolvi este projeto a fim de solucionar o teste proposto durante o processo seletivo da empresa Envolve.
+# Loja chadrez - Teste Front-End
+Desenvolvi este projeto para testar meu conhecimento com NextJS
 
 ## Tempo do projeto
 
