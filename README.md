@@ -1,6 +1,7 @@
 # Loja chadrez
 Desenvolvi este projeto para testar meu conhecimento com NextJS
-
+## Tecnologias Utilizadas
+NextJS, Context API, ChakraUi 
 ## Como utilizar:
 
 1 - Realize o git clone do projeto em sua máquina ou baixe o zip e extraia em uma pasta;
