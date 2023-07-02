@@ -1,9 +1,6 @@
 # Loja chadrez
 Desenvolvi este projeto para testar meu conhecimento com NextJS
 
-## Tempo do projeto
-
-O desenvolvedor tem o tempo de uma semana para realizar o teste, começando dia 24/05.
 ## Como utilizar:
 
 1 - Realize o git clone do projeto em sua máquina ou baixe o zip e extraia em uma pasta;
