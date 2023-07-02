@@ -1,4 +1,4 @@
-# Loja chadrez - Teste Front-End
+# Loja chadrez
 Desenvolvi este projeto para testar meu conhecimento com NextJS
 
 ## Tempo do projeto
